@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/absens',AbsenController::class);
 
 
-
+//route meeting humma
+Route::get('/meeting/{isiberita}', [BeritaController::class,'index']);
 
 
 Route::get('/', function () {
