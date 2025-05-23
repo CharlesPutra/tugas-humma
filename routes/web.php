@@ -4,6 +4,7 @@ use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\Tugas2Controller;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,3 +48,9 @@ Route::get('/dashboard', [WelcomeController::class, 'Showdashboard'])->name('das
 //route tugas controller 1
 // Route::get('/perpustakaan',[PageController::class,'index']);
 Route::get('/isiperpustakaan',[PageController::class,'tampil']);
+
+
+//route tugas controller 2
+Route::resource('tugas2',Tugas2Controller::class)->only([
+    'index','create', 'store', 'edit', 'update', 'destroy'
+]);
